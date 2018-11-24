@@ -37,12 +37,13 @@
 body {
 	font-family: 'Museo Sans Cyrl 300';
 	color: #333333;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 .container {
 	width: 1170px;
 	margin: 0 auto;
+
 }
 
 .header-wrap {
