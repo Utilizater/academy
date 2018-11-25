@@ -43,8 +43,9 @@ body {
 .container {
 	width: 1170px;
 	margin: 0 auto;
-
 }
+
+
 
 .header-wrap {
 	display: flex;
@@ -266,4 +267,131 @@ img {
 	font-family: "Museo Sans Cyrl 700";
 	font-size: 15px;
 	line-height: 24px;
+}
+
+
+
+@media (max-width: 1200px){
+	.container{
+		width: 970px;
+	}
+
+	.main-text__title {
+		font-size: 30px;
+		line-height: 36px;
+	}
+}
+
+@media (max-width: 992px){
+	.container{
+		width: 800px;
+	}
+
+	.main-text__title {
+		font-size: 25px;
+		line-height: 30px;
+	}
+
+	.main-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.iput_area {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.input {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+
+@media (max-width: 768px){
+	.container{
+		width: 95%;
+	}
+
+	.hidden-xs {
+		display: none;
+	}
+
+	.main-wrap {
+		flex-direction: column;
+	}
+
+	.main-text {
+		max-width: 400px;
+		margin: auto;
+	}
+
+	.main-text__title {
+		text-align: center;
+	}
+
+	.feedback {
+		margin-top: 100px;
+	}
+
+
+	.form__title{
+		text-align: center;
+	}
+
+	.form-wraper {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.form {
+		align-content: center;
+	}
+
+}
+
+@media (max-width: 576px){
+	body {
+		font-size: 15px;
+	}
+
+	.header-wrap {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.header-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.button-header {
+		margin-top: 10px;
+	}
+
+	.form__button {
+		width: 270px;
+		text-align: center;
+	}
+
+	.form-message__wrap{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.form-message__2 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+}
+
+@media (max-width: 320px){
+
 }
