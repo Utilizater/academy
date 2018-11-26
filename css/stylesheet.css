@@ -338,7 +338,7 @@ input {
 	}
 
 	.form-images__img {
-		widows: 500px;
+		width: 500px;
 		height: auto;
 	}
 
@@ -385,7 +385,7 @@ input {
 	}
 
 	.form-images__img {
-		widows: 400px;
+		width: 400px;
 		height: auto;
 	}
 
@@ -430,7 +430,7 @@ input {
 	}
 
 	.form-images__img {
-		widows: 300px;
+		width: 300px;
 		height: auto;
 	}
 }
