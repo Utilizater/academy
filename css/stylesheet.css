@@ -170,6 +170,7 @@ img {
 	background-image: url("../img/main_page/3.png");
 }
 
+
 .form-wraper {
 	/*padding: 94px 0;*/
 	/*background-image: url("../img/form/1.png");
@@ -204,6 +205,9 @@ img {
 	margin-bottom: 50px;
 }
 
+input {
+	outline: none;
+}
 
 .input {
 	font-size: 15px;
@@ -298,6 +302,11 @@ img {
 		align-items: center;
 	}
 
+	
+	.feedback {
+		margin-top: 150px;
+	}
+
 	.iput_area {
 		display: flex;
 		flex-direction: column;
@@ -332,11 +341,6 @@ img {
 	.main-text__title {
 		text-align: center;
 	}
-
-	.feedback {
-		margin-top: 100px;
-	}
-
 
 	.form__title{
 		text-align: center;
