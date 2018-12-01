@@ -40,9 +40,14 @@ body {
 	overflow-x: hidden;
 }
 
+.main {
+	background-color: #f5f5f5;
+	padding: 60px 0;
+}
+
 .container {
 	width: 1170px;
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 
@@ -71,10 +76,13 @@ body {
 
 .header-text__phone {
 	display: block;
-	text-decoration: none;
-	color: #333333;
 	font-family: 'Museo Sans Cyrl 700';
 	font-size: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: #333333; 
 }
 
 .button {
@@ -93,11 +101,6 @@ body {
 
 .button:focus {
 	outline: none;
-}
-
-.main {
-	background-color: #f5f5f5;
-	padding: 60px 0;
 }
 
 .main-wrap {
@@ -427,13 +430,58 @@ input {
 }
 
 
+.portfolio {
+	padding: 100px 0px;
+	background-color: #f5f5f5;
+	
+}
+
+.container > h2 {
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 30px;
+	line-height: 45px;
+}
+
+.sectiona-title-center {
+	text-align: center;
+}
+
+.slider__item {
+	text-align: center;
+}
 
 
+.arrow {
+	width: 45px;
+	height: 19px;
+	position: absolute;
+	bottom: -68px;
+	cursor: pointer;
+}
 
+.arrow-left {
+	left: 50%;
+	background-image: url("../img/slider/arrow-left.png");
+	transform: translateX(-45px);
+	margin-left: -30ox;
+	background-repeat: no-repeat;
+	background-size: 50%;
+}
 
+.arrow-right {
+	left: 50%;
+	background-image: url("../img/slider/arrow-right.png");
+	background-repeat: no-repeat;
+	background-size: 50%;
+}
+
+.slider__item > img {
+	max-width: 95%;
+}
 
 
 @media (max-width: 1200px){
+
 	.container{
 		width: 970px;
 	}
@@ -442,18 +490,25 @@ input {
 		font-size: 30px;
 		line-height: 36px;
 	}
+
+	.form__button {
+		width: 272px;
+		text-align: center;
+	}
+	
 }
 
 
 @media (max-width: 992px){
-
+	
 	.container{
 		width: 800px;
 	}
 
 	.main-img{
-		width: 600px;
+		width: 500px;
 		height: auto;
+		margin-left: -15%;
 	}
 
 	.form-images__img {
@@ -508,6 +563,19 @@ input {
 		text-align: center;
 	}
 
+	.modal__dialog {
+		width: 900px;
+	}
+
+	.model__form__title {
+		font-size: 17px;
+		line-height: 25px;
+	}
+
+	.model__form__phone {
+		font-size: 17px;
+		line-height: 19px;
+	}
 
 }
 
@@ -520,7 +588,7 @@ input {
 	}
 
 	.main-img{
-		width: 550px;
+		width: 350px;
 		height: auto;
 	}
 
@@ -611,10 +679,7 @@ input {
 		margin-top: 10px;
 	}
 
-	.form__button {
-		width: 272px;
-		text-align: center;
-	}
+	
 
 	.form-message__wrap{
 		display: flex;

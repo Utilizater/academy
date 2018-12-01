@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/stylesheet.css">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/slick.css">
   <title>Ремонт квартир</title>
 </head>
 
@@ -165,10 +166,10 @@
           <span>Заполните поля ниже - мы свяжемся с Вами</span>
         </div>
         <div class="model__form__input-name">
-          <input class="model__form__input" placeholder="     Ваше имя" type="text">
+          <input class="model__form__input" placeholder="     Ваше имя" required type="text">
         </div>
         <div class="model__form__input-phone">
-          <input type="text" placeholder="     Ваш телефон" class="model__form__input">
+          <input type="text" placeholder="     Ваш телефон" required class="model__form__input">
         </div>
         <div class="model__form__button">
           <button class="button button-89">Узнать стоимость</button>
@@ -201,10 +202,83 @@
     $(document).click(function (event) {
       //if you click on anything except the modal itself or the "open modal" link, close the modal
       if (!$(event.target).closest(".modal__dialog, #button-callback").length) {
-        $("#modal-callback").toggleClass("model_visible");
+        $("#modal-callback").removeClass("model_visible");
       }
     });
   </script>
+
+  <section class="portfolio">
+    <div class="container">
+      <h2 class="section-title sectiona-title-center">
+        Работа с 2007 года, <br> мы сделали более 500 ремонтов в квартирах и домах 
+      </h2>
+      <div class="slider">
+        <div class="slider__item">
+          <img src="img/slider/1.png" alt="img">
+        </div>
+        <div class="slider__item">
+          <img src="img/slider/2.png" alt="img">
+        </div>
+        <div class="slider__item">
+          <img src="img/slider/3.png" alt="img">
+        </div>
+        <div class="slider__item">
+          <img src="img/slider/1.png" alt="img">
+        </div>
+        <div class="slider__item">
+          <img src="img/slider/2.png" alt="img">
+        </div>
+        <div class="slider__item">
+          <img src="img/slider/3.png" alt="img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <script src="js/slick.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+  $('.slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    nextArrow: '<div class="arrow arrow-right"></div>',
+    prevArrow: '<div class="arrow arrow-left"></div>',
+
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+
+
+
+  });
+});
+</script>
 
 </body>
 
