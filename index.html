@@ -20,7 +20,7 @@
           <a class="header-text__phone" href="tel:+74954225131">+7 (495) 42-251-31</a>
         </div>
         <div class="header-text__button">
-          <button class="button button-header">Перезвоните <span class="hidden-xs">мне</span></button>
+          <button class="button button-header" id="button-callback">Перезвоните <span class="hidden-xs">мне</span></button>
         </div>
       </div>
     </div>
@@ -90,6 +90,121 @@
       </div>
     </div>
   </section>
+
+  <div class="modal" id="modal-callback">
+    <div class="modal__dialog">
+      <div class="modal__information">
+        <div class="modal__information__offers">
+          <div class="modal__information__offer">
+            <div class="offer__img">
+              <img src="img/model-callback/1.png" alt="img">
+            </div>
+            <div class="offer__decription">
+              <div class="offer__descroption__tile"><span>Ванная комната</span></div>
+              <div class="offer__decription__line">
+                <img src="img/model-callback/5.png" alt="img">
+              </div>
+              <div class="offer__decription__calculate"><span> 135*150 - <b>31 000 руб.</b><br>
+                  170*170 - <b>43 000 руб.</b>
+                </span></div>
+            </div>
+          </div>
+          <div class="modal__information__offer">
+
+            <div class="offer__img">
+              <img src="img/model-callback/2.png" alt="img">
+            </div>
+            <div class="offer__decription">
+              <div class="offer__descroption__tile"><span>Туалет</span></div>
+              <div class="offer__decription__line">
+                <img src="img/model-callback/5.png" alt="img">
+              </div>
+              <div class="offer__decription__calculate"><span>135*70 - <b>14 000 руб.</b>></span></div>
+            </div>
+
+          </div>
+          <div class="modal__information__offer">
+
+            <div class="offer__img">
+              <img src="img/model-callback/3.png" alt="img">
+            </div>
+            <div class="offer__decription">
+              <div class="offer__descroption__tile"><span>Совмещенный санузел</span></div>
+              <div class="offer__decription__line">
+                <img src="img/model-callback/5.png" alt="img">
+              </div>
+              <div class="offer__decription__calculate"><span>170*210 - <b>54 000 руб.</b>
+                </span></div>
+            </div>
+
+          </div>
+        </div>
+        <div class="model__work-cost">
+          <div class="model__work-cost__title">
+            <span>В стоимость работ входит</span>
+          </div>
+          <div class="model__work-cost__list">
+            <ul class="model__work-cost__list-ul">
+              <li>Демонтаж старого покрытия стен и пола</li>
+              <li>Выравнивание стен гипсовыми составами</li>
+              <li>Грунтовка стен и пола антисептиком, бетоноконтактом</li>
+              <li>Монтаж кафельной плитки на полу и стенах</li>
+              <li>Установка реечного или натяжного потолка, светильников</li>
+              <li>Монтаж двери с коробкой</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="model__form">
+        <div class="model__form__title">
+          <span>Узнайте точную стоимость<br>
+            ремонта по телефону!</span>
+        </div>
+        <div class="model__form__ascking">
+          <span>Заполните поля ниже - мы свяжемся с Вами</span>
+        </div>
+        <div class="model__form__input-name">
+          <input class="model__form__input" placeholder="     Ваше имя" type="text">
+        </div>
+        <div class="model__form__input-phone">
+          <input type="text" placeholder="     Ваш телефон" class="model__form__input">
+        </div>
+        <div class="model__form__button">
+          <button class="button button-89">Узнать стоимость</button>
+        </div>
+        <div class="model__form__back_description">
+          <span>Или Вы можете перезвонить нам сами
+            по телефону:
+          </span>
+        </div>
+        <div class="model__form__phone">
+          <span><a href="#">+7 (8182) 42-51-31</a></span>
+        </div>
+        <div class="model__close" id="model-close">&#10006;</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#button-callback").on("click", function () {
+        $("#modal-callback").toggleClass("model_visible");
+      });
+
+      $("#model-close").on("click", function () {
+        $("#modal-callback").toggleClass("model_visible");
+      });
+    });
+
+    $(document).click(function (event) {
+      //if you click on anything except the modal itself or the "open modal" link, close the modal
+      if (!$(event.target).closest(".modal__dialog, #button-callback").length) {
+        $("#modal-callback").toggleClass("model_visible");
+      }
+    });
+  </script>
 
 </body>
 

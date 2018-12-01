@@ -273,6 +273,164 @@ input {
 	line-height: 24px;
 }
 
+.modal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0, 0, 0.52);
+	left: 0;
+	top: 0;
+	z-index: 99;
+  /*display: flex;*/ /*убрать после верстки модального окна*/
+	display: none;
+}
+
+.modal__dialog {
+	width: 1170px;
+	height: 674px;
+	background-color: white;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	position: relative;	
+}
+
+
+
+.modal__information {
+	background-color: #f7f7f7;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.modal__information__offers {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-top: 10%;
+}
+
+.offer__decription {
+	margin-left: 5%;
+}
+
+.modal__information__offer {
+	margin-bottom: 10px;
+}
+
+.offer__decription__line {
+	margin-top: -7px;
+}
+
+.offer__descroption__tile {
+	font-family: "Museo Sans Cyrl 500";
+	font-size: 16px;
+}
+
+.model__work-cost {
+	margin-top: 35px;
+	margin-left: 10%;
+}
+
+.model__work-cost__title {
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 14px;
+	line-height: 45px;
+}
+
+.modal__information__offer {
+	display: flex;
+}
+
+.model__work-cost__list {
+	font-family: "Museo Sans Cyrl 300";
+	font-size: 14px;
+	line-height: 25px;
+}
+
+
+.model__close {
+	display: none;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+}
+
+.model__work-cost__list-ul {
+	list-style-image: url("../img/model-callback/4.png");
+}
+
+.model__form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+}
+
+.model__form__title {
+	margin-top: 80px;
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 22px;
+	line-height: 33px;
+}
+
+.model__form__ascking {
+	font-family: "Museo Sans Cyrl 300";
+	font-size: 16px;
+	line-height: 35px;
+	margin-top: 52px;
+}
+
+.model__form__input-name {
+	margin-top: 53px;
+}
+
+.model__form__input-phone {
+	margin-top: 10px;
+}
+
+.model__form__input {
+	width: 370px;
+	height: 65px;
+	border-radius: 10px;
+}
+
+.model__form__button {
+	margin-top: 30px;
+}
+
+.button-89 {
+	width: 368px;
+	height: 70px;
+}
+
+.model__form__back_description {
+	font-family: "Museo Sans Cyrl 300";
+	font-size: 15px;
+	line-height: 20px;
+	margin-top: 30px;
+}
+
+.model__form__phone {
+	margin-top: 10px;
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 24px;
+	line-height: 24px;
+}
+
+
+.model_visible {
+	display: flex;
+}
+
+
+
+
+
+
 
 
 @media (max-width: 1200px){
@@ -285,6 +443,7 @@ input {
 		line-height: 36px;
 	}
 }
+
 
 @media (max-width: 992px){
 
@@ -349,12 +508,13 @@ input {
 		text-align: center;
 	}
 
+
 }
 
 
+
 @media (max-width: 768px){
-
-
+	
 	.container{
 		width: 95%;
 	}
@@ -386,12 +546,34 @@ input {
 		display: none;
 	}
 
+	.model__close {
+		display: block;
+	}
+
+	.modal__dialog {
+		flex-direction: column;
+		
+		width: 90%;
+		max-height: 650px;
+		overflow-y: auto;
+	}
+
+	.modal__information{
+		width: 100%;
+		height: 10000px;
+	}
+
+	.model__form {
+		width: 100%;
+	}
+
 }
 
 @media (max-width: 576px){
 	body {
 		font-size: 15px;
 	}
+
 
 	.main-text {
 		max-width: 250px;
@@ -446,6 +628,55 @@ input {
 		align-items: center;
 	}
 
+	.modal__dialog {
+		overflow-x: hidden;
+	}
+	
+	.model__close {
+		top: 0;
+		right: 0;
+	}
+
+	.modal__information {
+		/*height: auto;*/
+	}
+
+	.modal__information__offers {
+		/*height: auto;*/	
+		/*max-height: 5000000px;*/
+	}
+
+	.modal__information__offer {
+		margin-bottom: 70px;
+	}
+
+	.offer__decription {
+		margin-bottom: 70px;
+	}
+
+	.offer__descroption__tile {
+		margin-top: 40px;
+	}
+
+
+	.modal__information__offer {
+		margin-top: 20px;
+		justify-content: space-between;
+		align-items: center;
+		/*border: 1px solid;*/
+	}
+
+.model__work-cost {
+	margin-top: 250px;
+}
+
+.model__form__input {
+	width: 300px;	
+}
+
+.button-89 {
+	width: 300px;
+}
 
 }
 
@@ -455,8 +686,5 @@ input {
 		width: 250px;
 		height: auto;
 	}
-
-	
-
 
 }
