@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/stylesheet.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/slick.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <title>Ремонт квартир</title>
 </head>
 
@@ -68,10 +69,10 @@
         <div class="form">
           <h2 class="form__title">Мы бесплатно разработаем дизайн-проект Вашего жилья и реализуем его!</h2>
           <span class="form__subtitle">Оставьте заявку на разработку бесплатного дизайн-проекта!</span>
-          <form class="iput_area" action="#">
-            <input type="text" class="input feedback__input input-name" placeholder="Ваше имя">
+          <form class="iput_area js-ajax" action="#">
+            <input type="text" class="input feedback__input input-name" placeholder="Ваше имя" name="fio">
             <input type="tel" class="input feedback__input input-tel" pattern="\+7-[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}"
-              placeholder="Ваш телефон">
+              placeholder="Ваш телефон" name="phone">
             <button type="submit" class="button form__button">Получить бесплатный дизайн-проект</button>
           </form>
           <div class="form-message__wrap">
@@ -91,6 +92,26 @@
       </div>
     </div>
   </section>
+
+  <script>
+    $(document).ready(function(){
+  
+$(".js-ajax").on("submit", function(){
+  var fio = $('[name = fio]').val();
+  var phone = $('[name = phone]').val();
+  console.log(fio + " - " + phone); 
+  $.ajax({
+      url: 'ajax/test.html',
+      data: {fio: fio, phone: phone},
+      success: function(){
+        alert('Load was performed.');
+      }
+    });
+
+  });
+});
+</script>
+
 
   <div class="modal" id="modal-callback">
     <div class="modal__dialog">
@@ -166,10 +187,10 @@
           <span>Заполните поля ниже - мы свяжемся с Вами</span>
         </div>
         <div class="model__form__input-name">
-          <input class="model__form__input" placeholder="     Ваше имя" required type="text">
+          <input class="model__form__input  input" placeholder="     Ваше имя" required type="text">
         </div>
         <div class="model__form__input-phone">
-          <input type="text" placeholder="     Ваш телефон" required class="model__form__input">
+          <input type="text" placeholder="     Ваш телефон" required class="model__form__input input-tel input">
         </div>
         <div class="model__form__button">
           <button class="button button-89">Узнать стоимость</button>
@@ -187,7 +208,7 @@
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
   <script>
     $(document).ready(function () {
       $("#button-callback").on("click", function () {
@@ -210,7 +231,7 @@
   <section class="portfolio">
     <div class="container">
       <h2 class="section-title sectiona-title-center">
-        Работа с 2007 года, <br> мы сделали более 500 ремонтов в квартирах и домах 
+        Работа с 2007 года, <br> мы сделали более 500 ремонтов в квартирах и домах
       </h2>
       <div class="slider">
         <div class="slider__item">
@@ -235,49 +256,128 @@
     </div>
   </section>
 
-  
+
   <script src="js/slick.min.js"></script>
 
   <script>
-  $(document).ready(function(){
-  $('.slider').slick({
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    nextArrow: '<div class="arrow arrow-right"></div>',
-    prevArrow: '<div class="arrow arrow-left"></div>',
-
-    responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
+    $(document).ready(function () {
+      $('.slider').slick({
         slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
+        slidesToScroll: 3,
+        nextArrow: '<div class="arrow arrow-right"></div>',
+        prevArrow: '<div class="arrow arrow-left"></div>',
 
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1
+            }
+          },
+
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
 
 
 
-  });
-});
+      });
+    });
+  </script>
+
+
+  <section class="work-cost">
+    <div class="work-cost__wraper">
+      <div class="work-cost__descr">
+        <div class="work-cost__descr__addwrap">
+          <div class="work-cost__descr__title">
+            <span>Мы можем озвучить Вам примерную стоимость
+              работы и материалов по телефону</span>
+          </div>
+          <div class="work-cost__descr__question">
+            <span>Для этого нужно ответить на 4 вопроса:</span>
+          </div>
+          <div class="work-cost__descr__question-recods">
+            <div class="work-cost__descr__question-recod">
+              <div class="circle"><span>1.</span></div>
+              <div class="work-cost__descr__question-recod-item"><span>Какова площадь помещения?</span></div>
+            </div>
+            <div class="work-cost__descr__question-recod">
+              <div class="circle"><span>2.</span></div>
+              <div class="work-cost__descr__question-recod-item"><span>У Вас новостройка или вторичное жилье?</span></div>
+            </div>
+            <div class="work-cost__descr__question-recod">
+              <div class="circle"><span>3.</span></div>
+              <div class="work-cost__descr__question-recod-item"><span>Где находится помещение, в котором будет
+                  производиться ремонт?</span></div>
+            </div>
+            <div class="work-cost__descr__question-recod">
+              <div class="circle"><span>4.</span></div>
+              <div class="work-cost__descr__question-recod-item"><span>Назначение помещения?</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-cost__form">
+        <div class="work-cost__form__wraper">
+          <form action="mailer/smart.php" class="work-cost-form">
+            <div class="work-cost__form__title"><span>Оставьте заявку на бесплатный
+                расчет ремонта по телефону
+              </span></div>
+            <div class="work-cost__form__subtitle"><span>Для этого заполните форму ниже</span></div>
+            <div class="work-cost__form__input-name">
+              <input type="text" placeholder="   Ваше имя" class="input input-name work-cost__form__input" name="user_name" required/>
+            </div>
+            <div class="work-cost__form__input-tel">
+              <input type="text" placeholder="   Ваш телефон" class="input input-tel work-cost__form__input" name="user_phone" required="required"/>
+            </div>
+            <div class="work-cost__form__button">
+              <button class="button button-101" type="submit">Рассчитать стоимость</button>
+            </div>
+            <div class="work-cost__form__remark"><span>Мы перезвоним Вам в течение 60 секунд
+              </span></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script src="js/jquery.validate.js"></script>
+
+<script>
+  $("form").validate();
+</script>
+
+<script>
+		$('.work-cost-form').submit(function(event) {
+			event.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: "mailer/smart.php",
+				data: $(this).serialize()
+			}).done(function() {
+				$(this).find("input").val("");
+				alert("Сообщение успешно отправлено");
+				$("form").trigger("reset");
+			});
+			return false;
+		});
 </script>
 
 </body>

@@ -479,6 +479,139 @@ input {
 	max-width: 95%;
 }
 
+.work-cost__wraper {
+	display: flex;
+}
+
+.work-cost__descr {
+	background-color: #ffc000;
+	width: 60%;
+}
+
+.work-cost__descr__addwrap {
+	display: flex;
+	flex-direction: column;
+	align-content: left;
+	margin-left: 40%;
+	margin-right: 5%;
+}
+
+.work-cost__descr__title {
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 22px;
+	font-weight: 400;
+	margin-top: 106px;
+}
+
+.work-cost__descr__question {
+	font-family: "Museo Sans Cyrl 300";
+	font-size: 16px;
+	line-height: 45px;
+	margin-top: 50px;
+}
+
+.work-cost__descr__question-recods {
+	margin-top: 103px;
+	margin-bottom: 109px;
+	display: flex;
+	flex-direction: column;
+	font-family: "Museo Sans Cyrl 500";
+	font-size: 18px;
+	max-width: 450px;
+}
+
+.work-cost__descr__question-recod {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+}
+
+.work-cost__descr__question-recod-item {
+	margin-left: 10px;
+}
+
+.circle {
+	border: 2px solid;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	display: flex;
+	align-content: center;
+	flex-direction: center;
+	margin-right: 20px;
+	padding: 8px;
+}
+
+
+
+
+.work-cost__form {
+	width: 40%;
+	background-image: url("../img/work-cost/1.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.work-cost__form__wraper {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.work-cost__form__title {
+	margin-top: 103px;
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 22px;
+	line-height: 33px;
+}
+
+.work-cost__form__subtitle {
+	font-family: "Museo Sans Cyrl 300";
+	font-size: 16px;
+	line-height: 35px;
+	margin-top: 52px;
+}
+
+.work-cost__form__input-name {
+	margin-top: 49px;
+}
+
+.work-cost__form__input {
+	width: 100%;
+	height: 65px;
+}
+
+.work-cost__form__input-tel {
+	margin-top: 15px;
+}
+
+.work-cost__form__button {
+	margin-top: 30px;
+}
+
+.button-101 {
+	width: 100%;
+	height: 70px;
+}
+
+.work-cost__form__remark {
+	margin-top: 33px;
+	font-family: "Museo Sans Cyrl 300";
+	font-size: 15px;
+	line-height: 24px;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1200px){
 
@@ -500,6 +633,7 @@ input {
 
 
 @media (max-width: 992px){
+	
 	
 	.container{
 		width: 800px;
@@ -577,6 +711,11 @@ input {
 		line-height: 19px;
 	}
 
+
+	.work-cost__descr__addwrap {
+		margin-left: 10%;
+	}
+
 }
 
 
@@ -632,6 +771,19 @@ input {
 	}
 
 	.model__form {
+		width: 100%;
+	}
+
+	.work-cost__wraper {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.work-cost__descr {
+		width: 100%;
+	}
+
+	.work-cost__form {
 		width: 100%;
 	}
 
