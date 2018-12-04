@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/slick.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <meta name="viewport" content="width=device-width; initial-scale=1">
   <title>Ремонт квартир</title>
 </head>
 
@@ -69,10 +70,10 @@
         <div class="form">
           <h2 class="form__title">Мы бесплатно разработаем дизайн-проект Вашего жилья и реализуем его!</h2>
           <span class="form__subtitle">Оставьте заявку на разработку бесплатного дизайн-проекта!</span>
-          <form class="iput_area js-ajax" action="#">
-            <input type="text" class="input feedback__input input-name" placeholder="Ваше имя" name="fio">
+          <form class="iput_area js-ajax form-1" action="mailer/smart.php">
+            <input type="text" class="input feedback__input input-name" placeholder="Ваше имя" name="user_name">
             <input type="tel" class="input feedback__input input-tel" pattern="\+7-[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}"
-              placeholder="Ваш телефон" name="phone">
+              placeholder="Ваш телефон" name="user_phone">
             <button type="submit" class="button form__button">Получить бесплатный дизайн-проект</button>
           </form>
           <div class="form-message__wrap">
@@ -94,22 +95,21 @@
   </section>
 
   <script>
-    $(document).ready(function(){
-  
-$(".js-ajax").on("submit", function(){
-  var fio = $('[name = fio]').val();
-  var phone = $('[name = phone]').val();
-  console.log(fio + " - " + phone); 
-  $.ajax({
-      url: 'ajax/test.html',
-      data: {fio: fio, phone: phone},
-      success: function(){
-        alert('Load was performed.');
-      }
-    });
 
-  });
-});
+$('.form-1').submit(function(event) {
+			event.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: "mailer/smart.php",
+				data: $(this).serialize()
+			}).done(function() {
+				$(this).find("input").val("");
+				alert("Сообщение успешно отправлено");
+				$("form").trigger("reset");
+			});
+			return false;
+		});
+
 </script>
 
 
@@ -179,22 +179,26 @@ $(".js-ajax").on("submit", function(){
       </div>
 
       <div class="model__form">
+          <form action="mailer/smart.php" class="form-2"> 
         <div class="model__form__title">
           <span>Узнайте точную стоимость<br>
             ремонта по телефону!</span>
         </div>
         <div class="model__form__ascking">
+          
           <span>Заполните поля ниже - мы свяжемся с Вами</span>
+      
         </div>
         <div class="model__form__input-name">
-          <input class="model__form__input  input" placeholder="     Ваше имя" required type="text">
+          <input class="model__form__input  input" placeholder="     Ваше имя" required type="text" name="user_name">
         </div>
         <div class="model__form__input-phone">
-          <input type="text" placeholder="     Ваш телефон" required class="model__form__input input-tel input">
+          <input type="text" placeholder="     Ваш телефон" required class="model__form__input input-tel input" name="user_phone" pattern="\+7-[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}>
         </div>
         <div class="model__form__button">
-          <button class="button button-89">Узнать стоимость</button>
+          <button class="button button-89" type="submit">Узнать стоимость</button>
         </div>
+      
         <div class="model__form__back_description">
           <span>Или Вы можете перезвонить нам сами
             по телефону:
@@ -204,6 +208,7 @@ $(".js-ajax").on("submit", function(){
           <span><a href="#">+7 (8182) 42-51-31</a></span>
         </div>
         <div class="model__close" id="model-close">&#10006;</div>
+      </form>
       </div>
     </div>
   </div>
@@ -226,6 +231,21 @@ $(".js-ajax").on("submit", function(){
         $("#modal-callback").removeClass("model_visible");
       }
     });
+
+
+    	$('.form-2').submit(function(event) {
+			event.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: "mailer/smart.php",
+				data: $(this).serialize()
+			}).done(function() {
+				$(this).find("input").val("");
+				alert("Сообщение успешно отправлено");
+				$("form").trigger("reset");
+			});
+			return false;
+		});
   </script>
 
   <section class="portfolio">
@@ -345,7 +365,7 @@ $(".js-ajax").on("submit", function(){
               <input type="text" placeholder="   Ваше имя" class="input input-name work-cost__form__input" name="user_name" required/>
             </div>
             <div class="work-cost__form__input-tel">
-              <input type="text" placeholder="   Ваш телефон" class="input input-tel work-cost__form__input" name="user_phone" required="required"/>
+              <input type="text" placeholder="   Ваш телефон" class="input input-tel work-cost__form__input" name="user_phone" required="required" pattern="\+7-[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}/>
             </div>
             <div class="work-cost__form__button">
               <button class="button button-101" type="submit">Рассчитать стоимость</button>
@@ -361,7 +381,8 @@ $(".js-ajax").on("submit", function(){
 <script src="js/jquery.validate.js"></script>
 
 <script>
-  $("form").validate();
+ /* $("form").validate();*/
+ 
 </script>
 
 <script>
