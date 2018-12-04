@@ -6,12 +6,19 @@
   <link rel="stylesheet" href="css/stylesheet.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/animate.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <meta name="viewport" content="width=device-width; initial-scale=1">
   <title>Ремонт квартир</title>
 </head>
 
 <body>
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
+
   <heder class="header">
     <div class="container header-wrap">
       <div class="header-logo">
@@ -58,7 +65,7 @@
           </div>
         </div>
         <div class="main-image">
-          <img class="main-img" src="img/main_page/4.png" alt="img">
+          <img class="main-img wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" src="img/main_page/4.png" alt="img">
         </div>
       </div>
     </div>
@@ -81,7 +88,7 @@
               <span>Наш менеджер перезвонит Вам в течение 60 секунд</span>
             </div>
             <div class="form-message__2">
-              <div class="form__img"></div>
+              <div class="form__img  wow wobble"></div>
               <div class="from__or"><span>или перезвоните нам сами</span> <br>
                 <a class="from__or__phone" href="#">+7 (495) 42-251-31</a></div>
             </div>
@@ -96,7 +103,7 @@
 
   <script>
 
-$('.form-1').submit(function(event) {
+    $('.form-1').submit(function(event) {
 			event.preventDefault();
 			$.ajax({
 				type: "POST",
@@ -179,36 +186,37 @@ $('.form-1').submit(function(event) {
       </div>
 
       <div class="model__form">
-          <form action="mailer/smart.php" class="form-2"> 
-        <div class="model__form__title">
-          <span>Узнайте точную стоимость<br>
-            ремонта по телефону!</span>
-        </div>
-        <div class="model__form__ascking">
-          
-          <span>Заполните поля ниже - мы свяжемся с Вами</span>
-      
-        </div>
-        <div class="model__form__input-name">
-          <input class="model__form__input  input" placeholder="     Ваше имя" required type="text" name="user_name">
-        </div>
-        <div class="model__form__input-phone">
-          <input type="text" placeholder="     Ваш телефон" required class="model__form__input input-tel input" name="user_phone" pattern="\+7-[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}">
-        </div>
-        <div class="model__form__button">
-          <button class="button button-89" type="submit">Узнать стоимость</button>
-        </div>
-      
-        <div class="model__form__back_description">
-          <span>Или Вы можете перезвонить нам сами
-            по телефону:
-          </span>
-        </div>
-        <div class="model__form__phone">
-          <span><a href="#">+7 (8182) 42-51-31</a></span>
-        </div>
-        <div class="model__close" id="model-close">&#10006;</div>
-      </form>
+        <form action="mailer/smart.php" class="form-2">
+          <div class="model__form__title">
+            <span>Узнайте точную стоимость<br>
+              ремонта по телефону!</span>
+          </div>
+          <div class="model__form__ascking">
+
+            <span>Заполните поля ниже - мы свяжемся с Вами</span>
+
+          </div>
+          <div class="model__form__input-name">
+            <input class="model__form__input  input" placeholder="     Ваше имя" required type="text" name="user_name">
+          </div>
+          <div class="model__form__input-phone">
+            <input type="text" placeholder="     Ваш телефон" required class="model__form__input input-tel input" name="user_phone"
+              pattern="\+7-[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}">
+          </div>
+          <div class="model__form__button">
+            <button class="button button-89" type="submit">Узнать стоимость</button>
+          </div>
+
+          <div class="model__form__back_description">
+            <span>Или Вы можете перезвонить нам сами
+              по телефону:
+            </span>
+          </div>
+          <div class="model__form__phone">
+            <span><a href="#">+7 (8182) 42-51-31</a></span>
+          </div>
+          <div class="model__close" id="model-close">&#10006;</div>
+        </form>
       </div>
     </div>
   </div>
@@ -250,7 +258,7 @@ $('.form-1').submit(function(event) {
 
   <section class="portfolio">
     <div class="container">
-      <h2 class="section-title sectiona-title-center">
+      <h2 class="section-title sectiona-title-center wow bounceInDown">
         Работа с 2007 года, <br> мы сделали более 500 ремонтов в квартирах и домах
       </h2>
       <div class="slider">
@@ -321,9 +329,64 @@ $('.form-1').submit(function(event) {
   </script>
 
 
+  <section class="price">
+    <div class="container">
+      <h2 class="section-title_center section-title  wow bounceInDown">У нас очень гибкая система скидок
+        на комплексные работы!</h2>
+      <div class="subtitle"><span>Прайс на наши услуги</span></div>
+      <div class="price-wrap">
+        <div class="card">
+          <div class="card__img-wrap">
+            <img src="img/prices_block/1.png" alt="img" class="card__img">
+          </div>
+          <h4 class="card_title">Ремонт ванных комнат и с/у</h4>
+          <a href="#" class="card__link">Узнать цены</a>
+        </div>
+        <div class="card">
+          <div class="card__img-wrap">
+            <img src="img/prices_block/2.png" alt="img" class="card__img">
+          </div>
+          <h4 class="card_title">Ремонт комнат и квартир</h4>
+          <a href="#" class="card__link">Узнать цены</a>
+        </div>
+        <div class="card">
+          <div class="card__img-wrap">
+            <img src="img/prices_block/3.png" alt="img" class="card__img">
+          </div>
+          <h4 class="card_title">Отделка офисных помещений</h4>
+          <a href="#" class="card__link">Узнать цены</a>
+        </div>
+        <div class="card">
+          <div class="card__img-wrap">
+            <div class="card__img-wrap">
+              <img src="img/prices_block/4.png" alt="img" class="card__img">
+            </div>
+          </div>
+          <h4 class="card_title">Ремонт в новостройках</h4>
+          <a href="#" class="card__link">Узнать цены</a>
+        </div>
+        <div class="card">
+          <div class="card__img-wrap">
+            <img src="img/prices_block/5.png" alt="img" class="card__img">
+          </div>
+          <h4 class="card_title">Ремонт кухонь</h4>
+          <a href="#" class="card__link">Узнать цены</a>
+        </div>
+        <div class="card">
+          <div class="card__img-wrap">
+            <img src="img/prices_block/6.png" alt="img" class="card__img">
+          </div>
+          <h4 class="card_title">Ремонт дач и коттеджей</h4>
+          <a href="#" class="card__link">Узнать цены</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <section class="work-cost">
     <div class="work-cost__wraper">
-      <div class="work-cost__descr">
+      <div class="work-cost__descr wow bounceInLeft">
         <div class="work-cost__descr__addwrap">
           <div class="work-cost__descr__title">
             <span>Мы можем озвучить Вам примерную стоимость
@@ -354,7 +417,7 @@ $('.form-1').submit(function(event) {
         </div>
       </div>
 
-      <div class="work-cost__form">
+      <div class="work-cost__form wow bounceInRight">
         <div class="work-cost__form__wraper">
           <form action="mailer/smart.php" class="work-cost-form">
             <div class="work-cost__form__title"><span>Оставьте заявку на бесплатный
@@ -362,10 +425,12 @@ $('.form-1').submit(function(event) {
               </span></div>
             <div class="work-cost__form__subtitle"><span>Для этого заполните форму ниже</span></div>
             <div class="work-cost__form__input-name">
-              <input type="text" placeholder="   Ваше имя" class="input input-name work-cost__form__input" name="user_name" required/>
+              <input type="text" placeholder="   Ваше имя" class="input input-name work-cost__form__input" name="user_name"
+                required />
             </div>
             <div class="work-cost__form__input-tel">
-              <input type="text" placeholder="   Ваш телефон" class="input input-tel work-cost__form__input" name="user_phone" required="required" pattern="\+7-[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}"/>
+              <input type="text" placeholder="   Ваш телефон" class="input input-tel work-cost__form__input" name="user_phone"
+                required="required" pattern="\+7-[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3}" />
             </div>
             <div class="work-cost__form__button">
               <button class="button button-101" type="submit">Рассчитать стоимость</button>
@@ -378,28 +443,29 @@ $('.form-1').submit(function(event) {
     </div>
   </section>
 
-<script src="js/jquery.validate.js"></script>
+  <script src="js/jquery.validate.js"></script>
 
-<script>
- /* $("form").validate();*/
- 
-</script>
+  <script>
+    /* $("form").validate();*/
+  </script>
 
-<script>
-		$('.work-cost-form').submit(function(event) {
-			event.preventDefault();
-			$.ajax({
-				type: "POST",
-				url: "mailer/smart.php",
-				data: $(this).serialize()
-			}).done(function() {
-				$(this).find("input").val("");
-				alert("Сообщение успешно отправлено");
-				$("form").trigger("reset");
-			});
-			return false;
-		});
-</script>
+  <script>
+    $('.work-cost-form').submit(function (event) {
+      event.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: "mailer/smart.php",
+        data: $(this).serialize()
+      }).done(function () {
+        $(this).find("input").val("");
+        alert("Сообщение успешно отправлено");
+        $("form").trigger("reset");
+      });
+      return false;
+    });
+  </script>
+
+
 
 </body>
 
