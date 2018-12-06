@@ -689,10 +689,51 @@ input {
 	background-image: linear-gradient(to top, #ffd200 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+.footer {
+	display: flex;
+}
+
+.map {
+	width: 60%;
+	min-height: 640px;
+	
+}
+
+.contacts-wrap {
+	display: flex;
+	flex-direction: column;
+	margin-left: 134px;
+}
+
+.contacts__title {
+	margin-top: 100px;
+	width: 293px;
+	font-family: "Museo Sans Cyrl 700";
+	font-size: 22px;
+}
+
+.contacts_information-wrap{
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column
+}
+
+.contacts-item {
+	display: flex;
+	margin-top: 39px;
+}
+
+.contacts__text {
+	margin-left: 25px;
+	line-height: 1.5;
+}
+
+
+
+
 
 
 @media (max-width: 1200px){
-
 	.container{
 		width: 970px;
 	}
@@ -711,8 +752,7 @@ input {
 
 
 @media (max-width: 992px){
-	
-	
+
 	.container{
 		width: 800px;
 	}
@@ -794,12 +834,16 @@ input {
 		margin-left: 10%;
 	}
 
+	.contacts-wrap {
+		margin-left: 10%;
+	}
+
 }
 
 
 
 @media (max-width: 768px){
-	
+
 	.container{
 		width: 95%;
 	}
@@ -864,6 +908,34 @@ input {
 	.work-cost__form {
 		width: 100%;
 	}
+
+	.footer {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.map {
+		width: 100%;
+	}
+
+	.contacts {
+		width: 100%;
+		order: -1;
+	}
+
+	.contacts-wrap {
+		margin-left: 0;
+		align-items: center;
+	}
+
+	.contacts__title {
+		margin-top: 30px;
+	}
+
+	.contacts_information-wrap {
+		margin-top: 30px;
+	}
+
 
 }
 
